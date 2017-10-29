@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+package_name=live-config-fix-virtualbox
+mkdir -p "/usr/share/dpkgdivert/live-config-fix-virtualbox"
+case "$1" in
+  install)
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/live-config-fix-virtualbox/libliveconfig1140-xserver-xorg" --rename "/lib/live/config/1140-xserver-xorg"
+    ;;
+  upgrade)
+if [ "$(dpkg-divert --list "/lib/live/config/1140-xserver-xorg")" = "" ]
+then
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/live-config-fix-virtualbox/libliveconfig1140-xserver-xorg" --rename "/lib/live/config/1140-xserver-xorg"
+fi
+;;
+esac
+exit 0

@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+package_name=live-config-fix-virtualbox
+case "$1" in
+  remove)
+    dpkg-divert --package "$package_name" --rename --remove "/lib/live/config/1140-xserver-xorg"
+    ;;
+  purge)
+    dpkg-divert --package "$package_name" --rename --remove "/lib/live/config/1140-xserver-xorg"
+;;
+esac
+exit 0

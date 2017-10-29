@@ -1,0 +1,6 @@
+72920dc49f9cb06496a25c3152afd4fc  DEBIAN/dpkg-divert
+ad7cee3d15d54f0e25412a8be16a4e29  DEBIAN/preinst
+f2f4f6eca9025847cfa2c78aefa87033  DEBIAN/control
+d41d8cd98f00b204e9800998ecf8427e  DEBIAN/md5sums
+d29acffc8d84811ddc35eca57de7b2d9  DEBIAN/postrm
+627eda16b2e54d5c494d2f2ed8b2e2a3  lib/live/config/1140-xserver-xorg
